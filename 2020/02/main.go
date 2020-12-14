@@ -21,8 +21,9 @@ func main() {
 	validPasswords := 0
 	for _, line := range lines {
 		extracted := getParams(line)
-		if testPassword(extracted) {
+		if testPasswordv2(extracted) {
 			validPasswords++
+
 		}
 	}
 	fmt.Println(validPasswords)
@@ -41,6 +42,30 @@ func testPassword(Params map[string]string) bool {
 		if count <= maxChar {
 			return true
 		}
+	}
+	return false
+}
+
+func testPasswordv2(Params map[string]string) bool {
+	matched := false
+	pos1, _ := strconv.Atoi(Params["minChar"])
+	pos2, _ := strconv.Atoi(Params["maxChar"])
+
+	for i, char := range Params["password"] {
+		if string(char) == Params["letter"] {
+			if i+1 == pos1 {
+				matched = true
+			} else if i+1 == pos2 && !matched {
+				matched = true
+			} else if i+1 == pos2 && matched {
+				return false
+			}
+		}
+	}
+
+	if matched {
+		fmt.Println(Params)
+		return true
 	}
 	return false
 }
