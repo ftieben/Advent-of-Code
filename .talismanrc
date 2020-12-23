@@ -1,0 +1,7 @@
+fileignoreconfig:
+- filename: 2020/02/README.md
+  checksum: a1b93d5ee446c5cced8ff787bbb86e121ef914405c8e0674b6760d4560c5a53b
+- filename: 2020/04/README.md
+  checksum: ce1e26b06870aaf86e388627c90436d335067990ec36bbf5c45f8f410cad403f
+- filename: 2020/04/main.go
+  checksum: b0323363500bafb4196d99cd2d8bca3083aea37f3e74ff3dea6c12f2faa19a43
