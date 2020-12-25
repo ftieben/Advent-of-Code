@@ -19,6 +19,15 @@ func intToIntArray(input int) []int {
 	return cups
 }
 
+func intArrayToInt(input []int) int {
+	targetString := ""
+	for _, value := range input {
+		targetString = targetString + strconv.Itoa(value)
+	}
+	targetInt, _ := strconv.Atoi(targetString)
+	return targetInt
+}
+
 func check(e error) {
 	if e != nil {
 		panic(e)
@@ -51,27 +60,27 @@ func play(cups []int) []int {
 
 	// 1. -------------------------------------------------------------------- //
 	currentPos := 0
-	fmt.Println(currentPos, cups)
+	fmt.Println("Position:", currentPos, "Cups:", cups)
 	numPigs := 3
 	var pigs []int
 	pigged := 0
-	for i, cup := range cups {
+	for i := range cups {
 		i = i - pigged
 		if i == currentPos+1 && pigged < numPigs {
-			pigs = append(pigs, cup)
+			pigs = append(pigs, cups[i])
 			cups = remove(cups, i)
 			pigged++
 		}
 	}
 
 	// 2. -------------------------------------------------------------------- //
-	currentPos = nextPos(currentPos, cups)
-	fmt.Println(currentPos, cups)
+	destination := calcDestination(currentPos, cups)
+	fmt.Println("Position:", currentPos, "Cups:", cups, "Destination:", destination, "Pickups:", pigs)
 
 	return cups
 }
 
-func nextPos(currentPos int, cups []int) int {
+func calcDestination(currentPos int, cups []int) int {
 	currentLabel := 0
 	for i, cup := range cups {
 		if i == currentPos {
