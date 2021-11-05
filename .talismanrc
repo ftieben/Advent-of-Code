@@ -5,3 +5,5 @@ fileignoreconfig:
   checksum: ce1e26b06870aaf86e388627c90436d335067990ec36bbf5c45f8f410cad403f
 - filename: 2020/04/main.go
   checksum: b0323363500bafb4196d99cd2d8bca3083aea37f3e74ff3dea6c12f2faa19a43
+- filename: 2020/01/rust/Cargo.toml
+  checksum: 897e9209c843092716ba83e9a2831313036002b89f7a7bcba79bc829005d9162
