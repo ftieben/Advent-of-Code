@@ -51,19 +51,15 @@ fn part_two(liste: &Vec<i32>) {
     let mut third: bool = true;
 
     let mut status: String ="".to_string();
-    let mut position: i32 = liste.len() as i32 % 3 -1;
-    println!("started at position {}", position);
+
     let mut increased: i32 = 0;
     
 
     for item in liste {
-        if position == liste.len() as i32 {
-            println!("stopped at position {}", position);
-            //break;
-        }
         if !first {
             if !second {
-                cur_window_value = one_ago + two_ago + item;
+                
+                cur_window_value = one_ago + two_ago + *item;
                 if !third {
                     if cur_window_value > last_window_value {
                         increased = increased +1 ;
@@ -74,20 +70,24 @@ fn part_two(liste: &Vec<i32>) {
                         status = "decreased".to_string();
                     }
                 }else {
-                    third = false;
+                    //third element
+                    third = false; 
                 }
-                
-            } else {
-                two_ago = *item;
-                second = false;
-            }
-        } else {
-            one_ago = *item;
-            first = false;
-        }
-       position = position +1;
 
-       println!("pos:{} value:{} lastWindow:{} curWindow:{} status:{}", position,item, last_window_value, cur_window_value, status);
+            } else {
+                //second elemenet
+                second = false;
+                
+            }
+            two_ago = one_ago;
+            one_ago = *item;
+        } else {
+            // first element
+            first = false;
+            one_ago = *item;
+        }
+    
+       //println!("value:{} one_ago:{} two_ago:{} lastWindow:{} curWindow:{} status:{}", item, one_ago, two_ago, last_window_value, cur_window_value, status);
        last_window_value = cur_window_value;
     }
     println!("{}", increased);
