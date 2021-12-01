@@ -35,7 +35,7 @@ fn part_one(liste: &Vec<i32>) {
         }
        
     }
-    println!("{}", increased);
+    println!("Answer Part 1: {}", increased);
 }
  
 fn part_two(liste: &Vec<i32>) {
@@ -87,8 +87,8 @@ fn part_two(liste: &Vec<i32>) {
             one_ago = *item;
         }
     
-       //println!("value:{} one_ago:{} two_ago:{} lastWindow:{} curWindow:{} status:{}", item, one_ago, two_ago, last_window_value, cur_window_value, status);
+       println!("    value:{} one_ago:{} two_ago:{} lastWindow:{} curWindow:{} status:{}", item, one_ago, two_ago, last_window_value, cur_window_value, status);
        last_window_value = cur_window_value;
     }
-    println!("{}", increased);
+    println!("Answer Part 2: {}", increased);
 }
