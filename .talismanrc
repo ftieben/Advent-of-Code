@@ -7,3 +7,5 @@ fileignoreconfig:
   checksum: b0323363500bafb4196d99cd2d8bca3083aea37f3e74ff3dea6c12f2faa19a43
 - filename: 2020/01/rust/Cargo.toml
   checksum: 897e9209c843092716ba83e9a2831313036002b89f7a7bcba79bc829005d9162
+- filename: 2021/01/Cargo.toml
+  checksum: cef17b1a42b1ba7b4499a77f9696178eba4742c6c3cecb106a592f47973d5a34
