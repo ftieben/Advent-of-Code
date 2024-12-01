@@ -1,0 +1,11 @@
+[package]
+name = "advent_of_code_02"
+version = "0.1.0"
+authors = ["Florian Tieben <ftiebe@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+
+[[bin]]
+name = "advent_of_code_02"
+path = "main.rs"
